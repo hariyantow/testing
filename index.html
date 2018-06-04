@@ -1,25 +1,37 @@
 <html>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 <style>
 body, p{padding:0;margin:0;}
-</style>
 
+</style>
+<div class="container">
+	<div class="jumbotron">
 <form action="mail.php" method="POST">
 <p>Reason</p>
-<select name="reason" size="1">
+<select class="form-control" name="reason" size="1">
 <option value="feedback">feedback</option>
 <option value="complain">complain</option>
 <option value="enquiry">enquiry</option>
 <option value="others">Others</option>
 </select>
 <br />
-<p>Name</p> <input type="text" name="name">
-<p>Contact No</p> <input type="text" name="phone">
-<p>Email</p> <input type="text" name="email">
-<p>Remarks</p><br><textarea name="remarks" rows="6" cols="25"></textarea><br />
-<input type="submit" value="Send"><input type="reset" value="Clear">
+
+<p>Name</p> <input class="form-control" type="text" name="name">
+<p>Contact No</p> <input class="form-control" type="text" name="phone">
+<p>Email</p> <input class="form-control" type="text" name="email">
+<p>Remarks</p><br><textarea class="form-control" name="remarks" rows="6" cols="25"></textarea><br />
+<input class="btn btn-primary" type="submit" value="Send"><input class="btn btn-default" type="reset" value="Clear">
 </form>
 
 <br>
+
 <a href="admin/index.html">admin</a>
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+</html>
