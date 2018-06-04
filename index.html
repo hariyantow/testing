@@ -1,0 +1,25 @@
+<html>
+<style>
+body, p{padding:0;margin:0;}
+</style>
+
+<form action="mail.php" method="POST">
+<p>Reason</p>
+<select name="reason" size="1">
+<option value="feedback">feedback</option>
+<option value="complain">complain</option>
+<option value="enquiry">enquiry</option>
+<option value="others">Others</option>
+</select>
+<br />
+<p>Name</p> <input type="text" name="name">
+<p>Contact No</p> <input type="text" name="phone">
+<p>Email</p> <input type="text" name="email">
+<p>Remarks</p><br><textarea name="remarks" rows="6" cols="25"></textarea><br />
+<input type="submit" value="Send"><input type="reset" value="Clear">
+</form>
+
+<br>
+<a href="admin/index.html">admin</a>
+
+
