@@ -3,29 +3,35 @@
 <style>
 body, p{padding:0;margin:0;}
 
+.label:after{
+ content:"*" ;
+color:red    
+}
+
 </style>
 <div class="container">
 	<div class="jumbotron">
 <form action="mail.php" method="POST">
-<p>Reason</p>
+<label class="label">Reason</label>
 <select class="form-control" name="reason" size="1">
-<option value="feedback">feedback</option>
-<option value="complain">complain</option>
-<option value="enquiry">enquiry</option>
+<option value="feedback">Feedback</option>
+<option value="complain">Complain</option>
+<option value="enquiry">Enquiry</option>
 <option value="others">Others</option>
 </select>
 <br />
 
-<p>Name</p> <input class="form-control" type="text" name="name">
-<p>Contact No</p> <input class="form-control" type="text" name="phone">
-<p>Email</p> <input class="form-control" type="text" name="email">
-<p>Remarks</p><br><textarea class="form-control" name="remarks" rows="6" cols="25"></textarea><br />
+<label class="label">Name</label> <input class="form-control required" type="text" name="name" required>
+<label class="label">Contact No</label> <input class="form-control required" type="text" name="phone" required>
+<label class="label">Email</label> <input class="form-control required" type="text" name="email" required>
+<label class="label">Remarks</label><br><textarea id="textarea" class="form-control required" name="remarks" rows="6" cols="25" required maxlength="255"></textarea><br />
+<label id="textarea_feedback"></label><br>
 <input class="btn btn-primary" type="submit" value="Send"><input class="btn btn-default" type="reset" value="Clear">
 </form>
 
 <br>
 
-<a href="admin/index.html">admin</a>
+<a href="admin/index.html"  class="btn btn-primary">Admin</a>
 </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -34,4 +40,17 @@ body, p{padding:0;margin:0;}
 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 
+<script type="text/javascript">
+	$(document).ready(function() {
+    var text_max = 255;
+    $('#textarea_feedback').html(text_max + ' characters remaining');
+
+    $('#textarea').keyup(function() {
+        var text_length = $('#textarea').val().length;
+        var text_remaining = text_max - text_length;
+
+        $('#textarea_feedback').html(text_remaining + ' characters remaining');
+    });
+});
+</script>
 </html>
